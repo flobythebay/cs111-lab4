@@ -415,7 +415,7 @@ void write_inode_table(int fd) {
 	// for (int i = 0; i < 11; i++) {
 	// 	hello_inode.i_block[i] = hello_world[i];
 	// }
-	memcpy(hello_inode.i_block, hello_world, strlen(hello_world));
+	memcpy(hello_inode.i_block, hello_world, strlen(hello_world) + 1);
 	write_inode(fd, HELLO_INO, &hello_inode);
 
 	// root
