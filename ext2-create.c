@@ -291,12 +291,12 @@ void write_block_bitmap(int fd)
 	int row_23rd_index = 23 / 8;
 	map_value[row_23rd_index] = 0b01111111;
 
-	int row_1024th_index = 1024 / 8;
-	for (int i = row_23rd_index + 1; i < row_1024th_index; i++) {
+	int row_1023rd_index = 1023 / 8;
+	for (int i = row_23rd_index + 1; i < row_1023rd_index; i++) {
 		map_value[i] = 0b00000000;
 	}
 
-	map_value[row_1024th_index] = 0b10000000;
+	map_value[row_1023rd_index] = 0b10000000;
 
 	if (write(fd, map_value, BLOCK_SIZE) != BLOCK_SIZE)
 	{
