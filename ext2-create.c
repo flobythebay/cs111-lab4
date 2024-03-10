@@ -330,7 +330,7 @@ void write_inode_bitmap(int fd)
 		map_value[i] = 0b00000000;
 	} 
 	
-	map_value[index_row_3] = 0b01111111;
+	map_value[index_row_16] = 0b0000000;
 
 	if (write(fd, map_value, BLOCK_SIZE) != BLOCK_SIZE)
 	{
