@@ -412,7 +412,7 @@ void write_inode_table(int fd) {
 	hello_inode.i_links_count = 1; 
 	hello_inode.i_blocks = 0; /* These are oddly 512 blocks */
 	char hello_world[] = "hello-world";
-	for (int i = 0; i < strlen(hello_world); i++) {
+	for (int i = 0; i < 11; i++) {
 		hello_inode.i_block[i] = hello_world[i];
 	}
 	write_inode(fd, HELLO_INO, &hello_inode);
